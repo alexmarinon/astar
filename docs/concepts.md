@@ -1,0 +1,4 @@
+- Heuristic
+- Cost
+- G, H,
+- heaped queue
