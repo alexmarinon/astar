@@ -5,9 +5,9 @@ from .Path import Path
 from .Visualizer import Visualizer
 
 class Simulation:
-    def __init__(self, width, height):
+    def __init__(self, width, height, pass_allow_diagonal=False):
         self.map = Map(width, height)
-        self.path_finder = PathFinder(self.map)
+        self.path_finder = PathFinder(self.map, pass_allow_diagonal)
         self.path = None
 
     def setup(self, start, goal, obstacles):
