@@ -1,3 +1,4 @@
+# Path is basically just a list of nodes
 class Path:
     def __init__(self, nodes=None):
         if nodes is None:
@@ -8,4 +9,4 @@ class Path:
         self.nodes.append(node)
 
     def get_path(self):
-        return [(node.x, node.y) for node in self.nodes]
+        return [(node.x, node.y) for node in self.nodes] # returns list of coordinates
