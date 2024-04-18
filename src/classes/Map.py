@@ -1,23 +1,59 @@
 from .Node import Node
 
-# A Map is kind of a datatype of a grid of Nodes.
 class Map:
-    def __init__(self, width, height): # create a map
-        self.width = width # width (how many Nodes across)
-        self.height = height # height
-        self.nodes = [[Node(x, y) for y in range(height)] for x in range(width)] # inline function to create array of arrays
-        # allows to index the position of a Node with self.Nodes[0][0] - providing (0,0) coords of the node, top left
-        self.start = None # start Node on the map, from which the pathfinding is calculated
-        self.goal = None # end Node on the map, to which the pathfinding is calculated
+    """
+    Represents a grid of nodes, facilitating operations such as setting start and goal positions,
+    adding obstacles, and accessing individual nodes. This class serves as the foundation for
+    implementing pathfinding algorithms.
+    """
 
-    def set_obstacle(self, x, y): # sets a Node at the coordinates as an obstacle
-        self.nodes[x][y].block = True 
+    def __init__(self, width, height):
+        """
+        Initialise the Map with specified dimensions and populate it with nodes.
 
-    def set_goal(self, x, y): # sets node as the maps goal
+        :param width: The number of nodes across (x-direction).
+        :param height: The number of nodes down (y-direction).
+        """
+        self.width = width  # Number of nodes horizontally
+        self.height = height  # Number of nodes vertically
+        # Generate a 2D list of Node objects
+        self.nodes = [[Node(x, y) for y in range(height)] for x in range(width)]
+        self.start = None  # Starting node coordinates for pathfinding
+        self.goal = None  # Goal node coordinates for pathfinding
+
+    def set_obstacle(self, x, y):
+        """
+        Mark a node at the given coordinates as an obstacle, making it non-traversable.
+
+        :param x: The x-coordinate of the node.
+        :param y: The y-coordinate of the node.
+        """
+        self.nodes[x][y].block = True
+
+    def set_goal(self, x, y):
+        """
+        Set the goal node for pathfinding.
+
+        :param x: The x-coordinate of the goal node.
+        :param y: The y-coordinate of the goal node.
+        """
         self.goal = (x, y)
 
-    def set_start(self, x, y): # sets node as the maps start position
+    def set_start(self, x, y):
+        """
+        Set the start node for pathfinding.
+
+        :param x: The x-coordinate of the start node.
+        :param y: The y-coordinate of the start node.
+        """
         self.start = (x, y)
 
-    def get_node(self, x, y): # returns a Node object at the maps coordinates
+    def get_node(self, x, y):
+        """
+        Retrieve a node at specified coordinates.
+
+        :param x: The x-coordinate of the node.
+        :param y: The y-coordinate of the node.
+        :return: The Node object at the specified coordinates.
+        """
         return self.nodes[x][y]

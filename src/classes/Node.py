@@ -1,24 +1,31 @@
 class Node:
+    """
+    Represents a single node within a grid map for pathfinding purposes. Each node
+    contains data related to its location, cost metrics for pathfinding, and its
+    navigational properties.
+    """
+
     def __init__(self, x, y):
         """
-        The Node is the fundamental building block of the path-finding system.
+        Initialise a node with its position and default pathfinding values.
+
+        :param x: The x-coordinate of the node in the grid.
+        :param y: The y-coordinate of the node in the grid.
         """
-        """
-        A map is constructed of a grid of nodes
-        A node can be blocked, transversible
-        Has properties relating to the coordinates of the Node and the pathfinding cost
-        """
-        self.x = x # x val
-        self.y = y # y val
-        self.g = float('inf') # temporarily sets the score to infinite - cannot be transversed becaues the coordinates have not been rendered
-        self.h = 0 # heuristic
-        self.f = float('inf') # total cost
-        self.parent = None # parent Node is used in PathFinding reconstructing to backtrack the pathfinding route
-        self.block = False # If a Node is blocked, it is not transversible
-        self.in_closed_set = False # if it has been examined
-        self.in_open_set = False # if you cannot examine the Node
+        self.x = x  # x-coordinate
+        self.y = y  # y-coordinate
+        self.g = float('inf')  # Cost from start to node
+        self.h = 0  # Heuristic cost from node to goal
+        self.f = float('inf')  # Total cost (g + h)
+        self.parent = None  # Parent node in the path
+        self.block = False  # Whether the node is traversable
+        self.in_closed_set = False  # Whether node has been processed
+        self.in_open_set = False  # Whether node is in the queue to be processed
 
     def reset(self):
+        """
+        Reset the node's pathfinding metrics for a new pathfinding operation.
+        """
         self.g = float('inf')
         self.f = float('inf')
         self.h = 0
@@ -26,5 +33,12 @@ class Node:
         self.in_closed_set = False
         self.in_open_set = False
 
-    def __lt__(self, other):  # ability to compare two nodes f values. adds the ability to do comparison operators on Nodes
-        return self.f < other.f # like Node1 < Node2
+    def __lt__(self, other):
+        """
+        Define less-than for node comparison based on f cost. This supports
+        comparisons between nodes, useful in priority queues during pathfinding.
+
+        :param other: Another node to compare against.
+        :return: True if this node's f cost is less than the other's.
+        """
+        return self.f < other.f

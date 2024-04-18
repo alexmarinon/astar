@@ -1,9 +1,6 @@
 from classes.Simulation import Simulation
 from tkinter import messagebox
 
-"""
-block comments are so cool it shows in visual studio intellisense
-"""
 def show_popup():
     messagebox.showinfo("Important Info on How to Use", f"1. Change Metric switches between Chebyshev & Manhattan heuristic \n2. You can hold down left click to continuously draw obstacles.")
 
