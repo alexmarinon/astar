@@ -108,6 +108,7 @@ class Visualizer:
     def handle_events(self):
         """
         Processes PyGame events such as mouse clicks and button presses, updating the simulation state accordingly.
+        Adds functionality to handle dragging to paint obstacles on the grid.
         """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -132,13 +133,13 @@ class Visualizer:
                     elif self.clear_obstacles_button_rect.collidepoint(pos):
                         self.simulation.clear_obstacles()
                     else:
+                        # If the click is not on a button, process it as a grid click
                         self.process_click(pos)
-
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:  # Left mouse button
                     self.mouse_button_down = False
-                    self.last_node_toggled = None
-            elif event.type is pygame.MOUSEMOTION:
+                    self.last_node_toggled = None  # Reset the last node toggled
+            elif event.type == pygame.MOUSEMOTION:
                 if self.mouse_button_down:
                     self.process_click(pygame.mouse.get_pos())
         return True
