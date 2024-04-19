@@ -4,11 +4,11 @@ import heapq
 
 class PathFinder:
     """
-    Provides functionalities for pathfinding algorithms, specifically A-Star.
+    Provides functionalities for pathfinding algorithms.
     """
     def __init__(self, map, allow_diagonal=False):
         """
-        Initialise the pathfinder with a map and an option to allow diagonal movement.
+        Initialise the pathfinder with a map and an option to allow diagonal movement (Chebyshev vs. Manhattan).
 
         :param map: The map object consisting of nodes.
         :param allow_diagonal: Boolean indicating if diagonal movement is allowed.
@@ -18,7 +18,7 @@ class PathFinder:
 
     def heuristic(self, a, b, allow_diagonal):
         """
-        Calculate the heuristic distance estimate between two nodes.
+        Calculate the heuristic distance between two nodes.
 
         :param a: The starting node.
         :param b: The goal node.

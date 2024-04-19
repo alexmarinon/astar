@@ -1,13 +1,13 @@
 class Node:
     """
-    Represents a single node within a grid map for pathfinding purposes. Each node
+    Represents a single node within a grid map. Each node
     contains data related to its location, cost metrics for pathfinding, and its
     navigational properties.
     """
 
     def __init__(self, x, y):
         """
-        Initialise a node with its position and default pathfinding values.
+        Initialise a node with its position and default values.
 
         :param x: The x-coordinate of the node in the grid.
         :param y: The y-coordinate of the node in the grid.
@@ -24,7 +24,7 @@ class Node:
 
     def reset(self):
         """
-        Reset the node's pathfinding metrics for a new pathfinding operation.
+        Reset the node's pathfinding vals.
         """
         self.g = float('inf')
         self.f = float('inf')
@@ -35,9 +35,9 @@ class Node:
 
     def __lt__(self, other):
         """
-        Define less-than for node comparison based on f cost. This supports
-        comparisons between nodes, useful in priority queues during pathfinding.
-
+        Override Python comparison operation to enable direct comparison between
+        Node objects to facilitate and measure Node cost.
+        
         :param other: Another node to compare against.
         :return: True if this node's f cost is less than the other's.
         """

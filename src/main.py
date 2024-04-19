@@ -1,6 +1,16 @@
 from classes.Simulation import Simulation
 from tkinter import messagebox
 
+
+"""
+Resources used:
+https://www.geeksforgeeks.org/python-__lt__-magic-method/
+https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2
+https://www.pygame.org/docs/ref/event.html
+https://www.redblobgames.com/pathfinding/a-star/implementation.html
+https://peps.python.org/pep-0008/
+"""
+
 def show_popup(title: str, message: str):
     messagebox.showinfo(title, message)
 

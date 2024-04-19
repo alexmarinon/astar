@@ -149,7 +149,7 @@ class Visualizer:
         """
         Processes mouse clicks on the grid, toggling the state of nodes between blocked and unblocked.
         """
-        x, y = pos[0] // self.cell_size, pos[1] // self.cell_size
+        x, y = pos[0] // self.cell_size, pos[1] // self.cell_size # modulus operation to get integer positions
         if 0 <= x < self.map.width and 0 <= y < self.map.height:
             node = self.map.get_node(x, y)
             if node != self.last_node_toggled:

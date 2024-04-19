@@ -2,14 +2,13 @@ from .Node import Node
 
 class Map:
     """
-    Represents a grid of nodes, facilitating operations such as setting start and goal positions,
-    adding obstacles, and accessing individual nodes. This class serves as the foundation for
-    implementing pathfinding algorithms.
+    Represents a grid of nodes, gives operations such as setting start and goal positions,
+    adding obstacles, and accessing individual nodes.
     """
 
     def __init__(self, width, height):
         """
-        Initialise the Map with specified dimensions and populate it with nodes.
+        Initialises the Map with specified dimensions and populate it with nodes.
 
         :param width: The number of nodes across (x-direction).
         :param height: The number of nodes down (y-direction).

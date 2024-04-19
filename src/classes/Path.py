@@ -6,7 +6,7 @@ class Path:
 
     def __init__(self, nodes=None):
         """
-        Initialise a Path instance with an optional list of nodes.
+        Initialise a Path instance.
 
         :param nodes: A list of nodes to initialise the path, default is an empty list.
         """
