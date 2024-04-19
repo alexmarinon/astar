@@ -46,6 +46,7 @@ class Visualizer:
         button_margin_top = 50
         button_spacing = 50
 
+        # Create definitions for PyGame-rendered components in the visualisation
         self.pathfind_button_rect = pygame.Rect(self.width + 10, button_margin_top, button_width, button_height)
         self.reset_button_rect = pygame.Rect(self.width + 10, button_margin_top + button_height + button_spacing, button_width, button_height)
         self.toggle_metric_button_rect = pygame.Rect(self.width + 10, button_margin_top + 2 * (button_height + button_spacing), button_width, button_height)
