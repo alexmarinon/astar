@@ -1,7 +1,6 @@
 from classes.Simulation import Simulation
 from tkinter import messagebox
 
-
 """
 Resources used:
 https://www.geeksforgeeks.org/python-__lt__-magic-method/
