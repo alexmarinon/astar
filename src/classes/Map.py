@@ -22,7 +22,7 @@ class Map:
 
     def set_obstacle(self, x, y):
         """
-        Mark a node at the given coordinates as an obstacle, making it non-traversable.
+        Mark a node at the given coordinates as an obstacle.
 
         :param x: The x-coordinate of the node.
         :param y: The y-coordinate of the node.

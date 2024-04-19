@@ -37,7 +37,8 @@ class Node:
         """
         Override Python comparison operation to enable direct comparison between
         Node objects to facilitate and measure Node cost.
-        
+        https://www.geeksforgeeks.org/python-__lt__-magic-method/
+
         :param other: Another node to compare against.
         :return: True if this node's f cost is less than the other's.
         """
