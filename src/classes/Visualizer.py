@@ -55,7 +55,7 @@ class Visualizer:
 
     def draw_grid(self):
         """
-        Generates a grid visualisation from cell sizes and node positions using PyGame's drawing functions.
+        Generates a grid visualisation from cell sizes and node positions.
         """
         for x in range(self.map.width):
             for y in range(self.map.height):
@@ -64,7 +64,7 @@ class Visualizer:
 
     def draw_menu(self):
         """
-        Draws the menu sidebar, including buttons for interaction with the simulation.
+        Draws the menu sidebar.
         """
         pygame.draw.rect(self.screen, self.menu_color, pygame.Rect(self.width, 0, self.menu_width, self.height))  # draw the menu background
         buttons = [
@@ -81,7 +81,7 @@ class Visualizer:
 
     def draw(self):
         """
-        Renders the entire visualisation including map, path, and interactive menu.
+        Renders the entire visualisation including map, path, and menu.
         """
         self.screen.fill(self.tile_color)
         self.draw_grid()
@@ -108,7 +108,7 @@ class Visualizer:
 
     def handle_events(self):
         """
-        Processes PyGame events such as mouse clicks and button presses, updating the simulation state.
+        Processes PyGame events like mouse clicks and button presses, updating the simulation state.
         Adds functionality to handle dragging to paint obstacles on the grid.
         """
         for event in pygame.event.get():

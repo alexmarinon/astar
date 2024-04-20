@@ -1,8 +1,8 @@
 class Node:
     """
     Represents a single node within a grid map. Each node
-    contains data related to its location, cost metrics for pathfinding, and its
-    navigational properties.
+    contains data related to its location, cost metrics for pathfinding, and other 
+    properties.
     """
 
     def __init__(self, x, y):
