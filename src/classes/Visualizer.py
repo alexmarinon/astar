@@ -108,7 +108,7 @@ class Visualizer:
 
     def handle_events(self):
         """
-        Processes PyGame events such as mouse clicks and button presses, updating the simulation state accordingly.
+        Processes PyGame events such as mouse clicks and button presses, updating the simulation state.
         Adds functionality to handle dragging to paint obstacles on the grid.
         """
         for event in pygame.event.get():
@@ -147,9 +147,9 @@ class Visualizer:
 
     def process_click(self, pos):
         """
-        Processes mouse clicks on the grid, toggling the state of nodes between blocked and unblocked.
+        Processes mouse clicks on the grid, toggling the state of nodes between blocked/noty.
         """
-        x, y = pos[0] // self.cell_size, pos[1] // self.cell_size # modulus operation to get integer positions
+        x, y = pos[0] // self.cell_size, pos[1] // self.cell_size # integer division operation to get integer positions coords
         if 0 <= x < self.map.width and 0 <= y < self.map.height:
             node = self.map.get_node(x, y)
             if node != self.last_node_toggled:
@@ -164,7 +164,7 @@ class Visualizer:
 
     def run(self):
         """
-        Runs the main loop, handling rendering and events until the window is closed.
+        Runs the main loop
         """
         running = True
         while running:

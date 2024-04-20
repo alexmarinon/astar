@@ -1,14 +1,13 @@
 class Path:
     """
-    Represents a path as a list of nodes within a grid. Provides functionality to manipulate
-    and retrieve node data within the path.
+    Represents a path as a list of nodes within a grid.
     """
 
     def __init__(self, nodes=None):
         """
         Initialise a Path instance.
 
-        :param nodes: A list of nodes to initialise the path, default is an empty list.
+        :param nodes: A list of nodes to initialise the path.
         """
         self.nodes = nodes if nodes is not None else []
 
@@ -22,7 +21,7 @@ class Path:
 
     def get_path(self):
         """
-        Retrieve the list of node coordinates that make up the path.
+        Get the list of node coordinates that make up the path.
 
         :return: A list of tuples, each representing the (x, y) coordinates of a node.
         """

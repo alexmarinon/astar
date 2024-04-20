@@ -67,7 +67,7 @@ class Simulation:
 
     def reset_path(self):
         """
-        Reset the pathfinding-related attributes of each node.
+        Reset the attributes of each node.
         """
         for row in self.map.nodes:
             for node in row:
