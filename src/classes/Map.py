@@ -1,4 +1,4 @@
-from .Node import Nodew
+from .Node import Node
 
 class Map:
     """
