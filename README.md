@@ -65,8 +65,8 @@ Two heuristics are used in this implementation:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/pathfinding-simulation.git
-   cd pathfinding-simulation
+   git clone https://github.com/alexmarinon/astar.git
+   cd src
    ```
 
 2. **Install the required libraries**:
