@@ -1,4 +1,4 @@
-# Pathfinding Simulation README
+# Pathfinding Simulation
 
 ## Overview
 
