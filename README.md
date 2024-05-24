@@ -125,4 +125,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-This README provides a comprehensive guide to understanding, setting up, and running the pathfinding simulation. It includes an overview of the theory behind the A* algorithm, detailed explanations of the classes and their roles, and instructions for installation and usage.
+Automatically generated README file.
